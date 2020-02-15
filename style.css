@@ -27,6 +27,11 @@ body{
 	grid-area: rightside;
 	border: 1px solid black
 }
+.picked-color{
+	display: block;
+	height: 15vh;
+	margin: 10px;
+}
 
 /*
   ##Device = Desktops
