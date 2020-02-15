@@ -3,6 +3,7 @@ const selectColors = document.querySelector('.select-colors');
 const pickColor = document.querySelectorAll('.pick-color');
 const selectedColors = document.querySelector('.selected-colors');
 
+
 pickColor.forEach(color => {
 	color.addEventListener('dragstart', (e) => {
 		e.dataTransfer.setData('text', e.target.style.backgroundImage)
@@ -22,6 +23,9 @@ selectedColors.addEventListener('drop', (e) => {
 	let selectedColor = e.dataTransfer.getData('text');
 	newColor.style.backgroundImage = selectedColor;
 	selectedColors.appendChild(newColor);
+	newColor.addEventListener('dragend', () => {
+		newColor.remove()
+	})
 	// Show used color
 	pickColor.forEach(color => {
 		let txt = document.createElement('div');
