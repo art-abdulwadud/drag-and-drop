@@ -21,6 +21,28 @@
             <h1 class="title" data-aos="fade-up"
         data-aos-duration="1500">Color Drag</h1>
         </div>
+        <div class="grid">
+            <div class="select-colors m-2 p-2" data-aos="fade-right" data-aos-duration="1500">
+                <h4>Select colors</h4>
+                <div class="colors-grid">
+                    <div class="pick-color" 
+                style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);" draggable="true"></div>
+                <div class="pick-color"
+                style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);" draggable="true"></div>
+                <div class="pick-color"
+                style="background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);" draggable="true"></div>
+                <div class="pick-color"
+                style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" draggable="true"></div>
+                <div class="pick-color"
+                style="background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);" draggable="true"></div>
+                <div class="pick-color"
+                style="background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);" draggable="true"></div>
+                </div>
+            </div>
+            <div class="selected-colors m-2 p-2" data-aos="fade-left" data-aos-duration="1500">
+                <h4>Selected colors</h4>
+            </div>
+        </div>
     </section>
     
     <!-- Optional JavaScript -->
@@ -28,7 +50,6 @@
     <script>
       AOS.init();
     </script>
-    <script src="slider.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="jquery/jquery-3.3.1.slim.min.js"></script>
     <script src="popper/popper.min.js"></script>

@@ -2,3 +2,29 @@ body{
     margin: 0;
     padding: 0;
 }
+.grid{
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 50% 50%;
+	grid-template-areas: "leftside rightside"
+}
+.select-colors{
+	grid-area: leftside;
+	border: 1px solid black;
+}
+.colors-grid{
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: auto;
+	grid-row-gap: 10px;
+}
+.pick-color{
+	height: 10vh;
+	width: 100px;
+	margin: 3px;
+	border-radius: 10px;
+}
+.selected-colors{
+	grid-area: rightside;
+	border: 1px solid black
+}
