@@ -14,7 +14,6 @@ body{
 }
 .colors-grid{
 	display: grid;
-	grid-template-columns: auto auto auto auto;
 	grid-template-rows: auto;
 	grid-row-gap: 10px;
 }
@@ -27,4 +26,64 @@ body{
 .selected-colors{
 	grid-area: rightside;
 	border: 1px solid black
+}
+
+/*
+  ##Device = Desktops
+*/
+
+@media (min-width: 1281px) {
+	.colors-grid{
+		grid-template-columns: auto auto auto auto;
+	}
+}
+
+/*
+##Device = Laptops, Desktops
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	.colors-grid{
+		grid-template-columns: auto auto auto auto;
+	}
+}
+
+/*
+##Device = Tablets, Ipads (portrait)
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.colors-grid{
+		grid-template-columns: auto auto auto;
+	}
+}
+
+/*
+##Device = Tablets, Ipads (landscape)
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.colors-grid{
+		grid-template-columns: auto auto auto;
+	}
+}
+
+/*
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.colors-grid{
+		grid-template-columns: auto auto;
+	}
+}
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+*/
+
+@media (max-width: 480px) {
+	.colors-grid{
+		grid-template-columns: auto;
+	} 
 }
