@@ -28,9 +28,23 @@ body{
 	border: 1px solid black
 }
 .picked-color{
-	display: block;
 	height: 15vh;
 	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	color: white;
+	font-size: calc(80% + 20px);
+}
+.confirm{
+	text-align: center;
+	background: rgba(0,0,0,0.4);
+	border-radius: 10px;
+	height: 10vh;
+	width: 100px;
+	color: white;
 }
 
 /*
