@@ -38,7 +38,15 @@ Finally, now we can collect the data transfered from `ondragstart` event using `
 dropTarget.addEventListener('drop', (e) => {
 	e.preventDefault()
 	let newBackground = e.dataTransfer.getData('text');
-	dropTarget.style.backgroundImage = newBackground;
+	e.target.style.backgroundImage = newBackground;
 })
 ```
-`getData()` takes in one argument, the type of data being recieved. The background of our drop target will now be changed.
+`getData()` takes in one argument, the type of data being recieved. The background of our drop target will now be changed. Everytime the background for the `dropTarget` changes, we want the `toBeDragged` background to change as well. For this we'll add:
+```
+dropTarget.addEventListener('drop', (e) => {
+	e.preventDefault()
+	let newBackground = e.dataTransfer.getData('text');
+	toBeDragged.style.backgroundImage = e.target.style.backgroundImage;
+	e.target.style.backgroundImage = newBackground;
+})
+```
