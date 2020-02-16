@@ -1,4 +1,22 @@
-// DOM Elements
+// Example one
+let toBeDragged = document.querySelector('.to-be-dragged');
+let dropTarget = document.querySelector('.drop-target');
+
+toBeDragged.addEventListener('dragstart', (e) => {
+	e.dataTransfer.setData('text', e.target.style.backgroundImage)
+})
+
+dropTarget.addEventListener('dragover', (e) => {
+	e.preventDefault()
+})
+dropTarget.addEventListener('drop', (e) => {
+	e.preventDefault()
+	let newBackground = e.dataTransfer.getData('text');
+	toBeDragged.style.backgroundImage = e.target.style.backgroundImage;
+	e.target.style.backgroundImage = newBackground;
+})
+
+// Example two
 const selectColors = document.querySelector('.select-colors');
 const pickColor = document.querySelectorAll('.pick-color');
 const selectedColors = document.querySelector('.selected-colors');
@@ -9,7 +27,6 @@ pickColor.forEach(color => {
 		e.dataTransfer.setData('text', e.target.style.backgroundImage)
 	})
 })
-
 
 selectedColors.addEventListener('dragover', (e) => {
 	e.preventDefault()
