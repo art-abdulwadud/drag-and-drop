@@ -47,11 +47,11 @@ body{
 	color: white;
 }
 .to-be-dragged{
-	width: 300px;
+	width: 100%;
 	height: 30vh;
 }
 .drop-target{
-	width: 300px;
+	width: 100%;
 	height: 30vh;
 }
 /*
