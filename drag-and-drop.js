@@ -2,7 +2,7 @@
 const selectColors = document.querySelector('.select-colors');
 const pickColor = document.querySelectorAll('.pick-color');
 const selectedColors = document.querySelector('.selected-colors');
-
+const mainGrid = document.querySelector('.grid');
 
 pickColor.forEach(color => {
 	color.addEventListener('dragstart', (e) => {
@@ -23,9 +23,29 @@ selectedColors.addEventListener('drop', (e) => {
 	let selectedColor = e.dataTransfer.getData('text');
 	newColor.style.backgroundImage = selectedColor;
 	selectedColors.appendChild(newColor);
-	newColor.addEventListener('dragend', () => {
-		newColor.remove()
-	})
+	let x = document.querySelectorAll('.picked-color');
+	// To delete selected color
+	for(let i = 0;i < x.length;i++){
+		x[i].addEventListener('dragend', (e) => {
+			e.preventDefault()
+			x[i].remove()
+		})
+		x[i].addEventListener('dragover', (e) => {
+			e.preventDefault()
+			if(x[i].style.backgroundImage == ""){
+				x[i].remove()
+			}
+		})
+		// To get rid of blank divs
+		x[i].addEventListener('drop', (e) => {
+			e.preventDefault()
+			if(e.target.style.backgroundImage == ""){
+				x[i].remove()
+			}
+			e.target.remove()
+		})
+	}
+	
 	// Show used color
 	pickColor.forEach(color => {
 		let txt = document.createElement('div');
