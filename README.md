@@ -22,7 +22,7 @@ toBeDragged.addEventListener('dragstart', (e) => {
 	e.dataTransfer.setData('text', e.target.style.backgroundImage)
 })
 ```
-As you can see, `setData()` takes in two arguments i.e the type of item being transfered and the item being transfered. In our case, we want to transfer the linear-gradient color which is in `document.style.backgroundImage`
+As you can see, `setData()` takes in two arguments i.e the type of data being transfered and the item being transfered. In our case, we want to transfer the linear-gradient color which is in `document.style.backgroundImage`
 
 Next, we want to run `preventDefault()` in `ondragover` event or otherwise our no items will not be allowed to be dropped at the drop target. We'll add this event to our drop target
 ```
@@ -37,5 +37,8 @@ Finally, now we can collect the data transfered from `ondragstart` event using `
 ```
 dropTarget.addEventListener('drop', (e) => {
 	e.preventDefault()
+	let newBackground = e.dataTransfer.getData('text');
+	dropTarget.style.backgroundImage = newBackground;
 })
 ```
+`getData()` takes in one argument, the type of data being recieved. The background of our drop target will now be changed.
