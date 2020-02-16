@@ -26,10 +26,6 @@ selectedColors.addEventListener('drop', (e) => {
 	let x = document.querySelectorAll('.picked-color');
 	// To delete selected color
 	for(let i = 0;i < x.length;i++){
-		x[i].addEventListener('dragend', (e) => {
-			e.preventDefault()
-			x[i].remove()
-		})
 		x[i].addEventListener('dragover', (e) => {
 			e.preventDefault()
 			if(x[i].style.backgroundImage == ""){
@@ -39,9 +35,6 @@ selectedColors.addEventListener('drop', (e) => {
 		// To get rid of blank divs
 		x[i].addEventListener('drop', (e) => {
 			e.preventDefault()
-			if(e.target.style.backgroundImage == ""){
-				x[i].remove()
-			}
 			e.target.remove()
 		})
 	}
